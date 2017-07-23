@@ -27,6 +27,7 @@ function checkTicketSwap() {
         uri: url,
     }, function (error, response, body) {
 
+        //console.log(response);
         checkHtmlForTickets(body);
     });
 }
