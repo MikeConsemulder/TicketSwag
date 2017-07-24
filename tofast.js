@@ -6,19 +6,9 @@ var $;
 var url = 'https://www.ticketswap.nl/event/a-campingflight-to-lowlands-paradise/regular/fcc6c783-6b32-4abd-8fe6-e9d0369c14df/20635';
 //url = 'https://www.ticketswap.nl/event/flawless-xxl/regular/ebbb410d-8df4-4dde-8b62-e7dff2a45e72/68187';
 
-var timer;
-var interval = 250;
 var dots = 0;
 
-startTimer();
-
-function startTimer(){
-
-    timer = setInterval(function() {
-
-        checkTicketSwap();
-    }, interval);
-}
+checkTicketSwap();
 
 
 function checkTicketSwap() {
@@ -43,8 +33,8 @@ function checkHtmlForTickets(htmlBody){
     if(aangeboden === ''){
 
         console.log('Faackkaaayouuu ticketswap');
-        clearInterval(timer);
         openUrl.open(url);
+        process.exit();
     }
 
     if(aangeboden > 0) {
@@ -52,10 +42,9 @@ function checkHtmlForTickets(htmlBody){
         link = $('.listings .listings--items .listings-item .listings-item--title h3 a');
         ahref = link.attr('href');
 
-        clearInterval(timer);
         url = 'https://www.ticketswap.nl' + ahref;
         openUrl.open(url);
-
+        process.exit();
     }else{
 
         var dotsDisplay = '';
@@ -70,5 +59,6 @@ function checkHtmlForTickets(htmlBody){
         }
         console.log('Aantal verkocht: ' + verkocht + ' aantal aangeboden: '+ aangeboden + dotsDisplay);
         dots++;
+        checkTicketSwap();
     }
 }
