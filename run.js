@@ -3,11 +3,11 @@ var openUrl = require("openurl");
 const cheerio = require('cheerio');
 var $;
 
-var url = 'https://www.ticketswap.nl/event/a-campingflight-to-lowlands-paradise/regular/fcc6c783-6b32-4abd-8fe6-e9d0369c14df/20635';
+var url = 'https://www.ticketswap.nl/event/gold-new-biki90-x-rgb-x-ketelhuis/ed9f37dc-1ff4-405a-aa34-80aa33b92246';
 //url = 'https://www.ticketswap.nl/event/flawless-xxl/regular/ebbb410d-8df4-4dde-8b62-e7dff2a45e72/68187';
 
 var timer;
-var interval = 250;
+var interval = 800;
 var dots = 0;
 
 startTimer();
