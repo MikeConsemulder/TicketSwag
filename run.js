@@ -9,6 +9,7 @@ var url = 'https://www.ticketswap.nl/event/gold-new-biki90-x-rgb-x-ketelhuis/ed9
 var timer;
 var interval = 800;
 var dots = 0;
+var globalCounter = 0;
 
 startTimer();
 
@@ -68,7 +69,9 @@ function checkHtmlForTickets(htmlBody){
 
             dots = 0;
         }
-        console.log('Aantal verkocht: ' + verkocht + ' aantal aangeboden: '+ aangeboden + dotsDisplay);
+
+	    globalCounter++;
+        console.log(globalCounter + ': Aantal verkocht: ' + verkocht + ' aantal aangeboden: '+ aangeboden + dotsDisplay);
         dots++;
     }
 }
