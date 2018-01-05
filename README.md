@@ -3,7 +3,9 @@
 To use this project, first clone it and run npm install inside folder.
 
 make sure you have node and git installed. 
+
 node: https://nodejs.org/en/download/
+
 git : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 After this open a console inside the folder and type 'npm start', hit enter
